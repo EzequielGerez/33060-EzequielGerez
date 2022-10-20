@@ -1,0 +1,602 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap");
+:root {
+  --theme-color: white;
+  --primario: #124f88;
+  --secundario: #f7c331;
+  --text-color: black;
+  --text-color-inverse: white;
+  --navbar-shalllow-color: #e5e5e5;
+  --menu-mobile-background-color: #3a4460; }
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: var(--theme-color);
+  color: var(--text-color);
+  padding-top: 90px; }
+
+a {
+  text-decoration: none;
+  color: var(--text-color); }
+
+.instagram {
+  display: none; }
+
+@media (min-width: 950px) {
+  .instagram {
+    display: contents; } }
+
+/* FIN DE ASPECTOS PRINCIPALES */
+/* INCIO NAV BAR */
+.topheader {
+  box-shadow: 0 4px 5px var(--menu-mobile-background-color);
+  position: fixed;
+  background-color: var(--theme-color);
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 9999; }
+
+.topnav {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  max-width: 980px;
+  margin: 0 auto; }
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center; }
+
+/* Menu */
+.menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+.menu li {
+  padding: 0 15px; }
+
+.menu a {
+  color: var(--text-color);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 70px;
+  position: relative; }
+
+.menu a::after {
+  content: "";
+  background-color: var(--secundario);
+  position: absolute;
+  left: 0;
+  top: calc(100% + 4px);
+  width: 100%;
+  height: 4px;
+  opacity: 0;
+  transition: opacity 0.4s; }
+
+.menu a.selected::after,
+.menu a:hover::after {
+  opacity: 0.8; }
+
+.menu a.hover {
+  color: var(--primario); }
+
+.open-menu,
+.close-menu {
+  display: none; }
+
+@media (max-width: 950px) {
+  .menu {
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    align-items: center;
+    background-color: var(--menu-mobile-background-color);
+    height: 100%;
+    overflow-y: auto;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5; }
+  .menu li {
+    padding: 0; }
+  .menu a {
+    color: var(--text-color-inverse);
+    line-height: 80px;
+    font-size: 25px; }
+  .open-menu,
+  .close-menu {
+    display: block;
+    border: none;
+    background: none;
+    cursor: pointers; }
+  .close-menu {
+    align-self: flex-end;
+    padding: 33px 15px; }
+  .menu_opened {
+    opacity: 1;
+    pointer-events: all; }
+  .menu a::after {
+    content: none; }
+  .menu a.selected,
+  .menu a:hover {
+    color: var(--secundario); } }
+
+/* FIN DE NAVBAR */
+/* INICIO ENCABEZADO */
+.profile {
+  text-align: center; }
+
+.main-info {
+  margin-bottom: 10px; }
+
+.main-pregunta {
+  font-size: 20px;
+  font-weight: 550;
+  margin: 0;
+  color: var(--primario);
+  max-width: 450px;
+  line-height: 1.3;
+  margin: 15px auto; }
+
+.main-invitacion {
+  font-size: 35px;
+  font-weight: bold;
+  margin: 0;
+  color: var(--primario);
+  font-family: "Noto Sans", sans-serif; }
+
+.main-btn {
+  background-color: var(--secundario);
+  color: var(--text-color-inverse);
+  border: none;
+  font-size: 20px;
+  padding: 0.4em 1em;
+  border-radius: 7px;
+  cursor: pointer; }
+
+.main-btn:hover {
+  filter: brightness(120%); }
+
+.main-img {
+  width: 80%;
+  max-width: 350px;
+  border-radius: 7px 7px 0 0; }
+
+.main-img-linea {
+  background-color: var(--secundario);
+  height: 15px;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0; }
+
+.main-img-section {
+  position: relative;
+  display: inline; }
+
+@media (min-width: 950px) {
+  .profile {
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    max-width: 980px;
+    margin: 0 auto;
+    align-items: center; }
+  .main-info {
+    margin-bottom: 25px; }
+  .main-pregunta {
+    font-size: 35px;
+    margin: 30px 0; }
+  .main-invitacion {
+    font-size: 50px; }
+  .main-btn {
+    font-size: 28px; }
+  .main-img {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 7px 7px 0 0; } }
+
+/* FIN ENCABEZADO */
+/* INCIO DEPORTES */
+.deportes {
+  display: flex;
+  flex-direction: column; }
+
+.deportes-body {
+  background-color: var(--primario);
+  color: var(--text-color-inverse); }
+
+.wave {
+  width: 100%;
+  position: relative;
+  top: 4px; }
+
+.wave_bottom {
+  transform: scaleY(-1);
+  width: 100%;
+  position: relative;
+  top: -2px; }
+
+.deportes-invitacion {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 35px;
+  margin: 25px; }
+
+.deportes-deporte {
+  font-size: 25px;
+  font-weight: bold;
+  color: var(--secundario);
+  text-transform: uppercase;
+  max-width: 450px;
+  margin: 15px auto; }
+
+.deportes-descripcion {
+  font-size: 20px;
+  font-weight: 400;
+  max-width: 450px;
+  line-height: 1.3;
+  margin: 10px auto; }
+
+.deportes-btn {
+  background-color: var(--secundario);
+  color: var(--text-color-inverse);
+  border: none;
+  font-size: 14px;
+  padding: 0.4em 0.8em;
+  border-radius: 7px;
+  cursor: pointer;
+  max-width: 450px;
+  margin: 10px auto; }
+
+.deportes-btn:hover {
+  filter: brightness(120%);
+  text-transform: uppercase;
+  color: var(--primario);
+  font-weight: bold; }
+
+.deportes-cards {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; }
+
+.card {
+  width: 300px;
+  margin: 10px;
+  padding: 20px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1); }
+
+.cover-card {
+  width: 100%;
+  height: 180px;
+  border-radius: 14px;
+  overflow: hidden; }
+
+.cover-card img {
+  width: 110%; }
+
+@media (min-width: 950px) {
+  .deportes {
+    display: flex;
+    flex-direction: column;
+    width: 100%; }
+  .deportes-body {
+    background-color: var(--primario);
+    color: var(--text-color-inverse);
+    width: 100%; }
+  .deportes-cards {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; }
+  .card {
+    width: 300px;
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1); }
+  .cover-card {
+    width: 100%;
+    height: 180px;
+    border-radius: 14px;
+    overflow: hidden; }
+  .cover-card img {
+    width: 110%; }
+  .wave {
+    width: 100%;
+    position: relative;
+    top: 4px; }
+  .wave_bottom {
+    transform: scaleY(-1);
+    width: 100%;
+    position: relative;
+    top: -2px; }
+  .deportes-invitacion {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 35px;
+    margin: 25px; }
+  .deportes-deporte {
+    font-size: 25px;
+    font-weight: bold;
+    color: var(--secundario);
+    text-transform: uppercase;
+    max-width: 450px;
+    margin: 15px auto; }
+  .deportes-descripcion {
+    font-size: 20px;
+    font-weight: 400;
+    max-width: 450px;
+    line-height: 1.3;
+    margin: 10px auto; }
+  .deportes-btn {
+    background-color: var(--secundario);
+    color: var(--text-color-inverse);
+    border: none;
+    font-size: 14px;
+    padding: 0.4em 0.8em;
+    border-radius: 7px;
+    cursor: pointer;
+    max-width: 450px;
+    margin: 10px auto; }
+  .deportes-btn:hover {
+    filter: brightness(120%);
+    text-transform: uppercase;
+    color: var(--primario);
+    font-weight: bold; } }
+
+/* FIN DEPORTES */
+.contenedor-hockey {
+  background-color: var(--primario);
+  color: var(--text-color-inverse);
+  display: flex;
+  flex-direction: column; }
+
+.titulo-hockey {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.3;
+  margin: 10px auto; }
+  .titulo-hockey span {
+    color: var(--secundario); }
+
+.contenido-hockey {
+  display: flex;
+  flex-direction: column; }
+
+.imagen-hockey {
+  margin: auto; }
+  .imagen-hockey img {
+    border-radius: 14px; }
+
+.descripcion-hockey {
+  line-height: 1.3;
+  margin: 15px; }
+
+.contenedor-rugby {
+  background-color: var(--primario);
+  color: var(--text-color-inverse);
+  display: flex;
+  flex-direction: column; }
+
+.titulo-rugby {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.3;
+  margin: 10px auto; }
+  .titulo-rugby span {
+    color: var(--secundario); }
+
+.contenido-rugby {
+  display: flex;
+  flex-direction: column; }
+
+.imagen-rugby {
+  margin: auto; }
+  .imagen-rugby img {
+    border-radius: 14px; }
+
+.descripcion-rugby {
+  line-height: 1.3;
+  margin: 15px; }
+
+/* INICIO PAGINA CONTACTO */
+.paddings {
+  margin: 20px; }
+
+.contacto {
+  background-color: var(--primario);
+  color: var(--text-color-inverse);
+  font-size: 18px;
+  border-radius: 14px;
+  padding: 25px;
+  display: grid;
+  gap: 25px; }
+
+.contacto-titulo {
+  font-size: 30px;
+  font-weight: 500;
+  text-align: center;
+  text-transform: uppercase; }
+
+.contacto-detalles,
+.contacto-form {
+  display: grid;
+  gap: 20px; }
+
+.contacto-form input {
+  border-radius: 7px;
+  border: none;
+  height: 30px;
+  padding: 5px 10px; }
+
+.contacto-form textarea {
+  border-radius: 7px;
+  border: none;
+  height: auto;
+  padding: 5px 10px;
+  resize: vertical; }
+
+.contacto-detalles-grupo,
+.contacto-form-grupo {
+  display: grid;
+  gap: 3px; }
+
+.contacto-label {
+  text-transform: uppercase;
+  font-weight: 500; }
+
+.contacto p,
+.contacto h2 {
+  margin: 0;
+  padding: 0; }
+
+.contacto-form-submit {
+  width: 100%;
+  height: 50px;
+  background-color: var(--secundario);
+  border: 1px solid var(--theme-color);
+  cursor: pointer;
+  border-radius: 7px;
+  color: var(--text-color-inverse);
+  font-weight: 500; }
+
+.contacto-form-submit:hover {
+  box-shadow: 0 0 14px var(--secundario); }
+
+@media (min-width: 950px) {
+  .contacto {
+    font-size: 20px;
+    padding: 70px;
+    max-width: 980px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    display: grid;
+    grid: "titulo form" "detalles form" 1fr/ 1fr 1fr; }
+  .contacto-titulo {
+    font-size: 35px;
+    text-align: left;
+    grid-area: titulo; }
+  .contacto-detalles {
+    grid-area: detalles; }
+  .contacto-form {
+    grid-area: form; } }
+
+/* FIN PAGINA CONTACTO */
+/* INCIO FOOTER */
+footer {
+  background-color: var(--primario);
+  color: var(--text-color-inverse);
+  width: 100%;
+  box-shadow: 5px 0px 5px var(--menu-mobile-background-color); }
+
+.container-footer {
+  width: 100%;
+  max-width: 475px;
+  margin: auto; }
+
+.container-body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center; }
+
+.columna1 {
+  width: 100%;
+  margin: auto; }
+
+.columna1 h2 {
+  font-size: 18px; }
+
+.row-info {
+  margin: 8px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; }
+
+.row-info label {
+  margin-left: 5px; }
+
+.row-info img {
+  height: 20px;
+  width: 20px; }
+
+.columna2 {
+  width: 100%;
+  margin: auto; }
+
+.columna2 h2 {
+  font-size: 18px; }
+
+.row-rs {
+  margin: 8px 0;
+  display: flex;
+  justify-content: center; }
+
+.row-rs img {
+  height: 40px;
+  width: 40px; }
+
+.row-rs label {
+  margin-top: 13px;
+  margin-left: 15px; }
+
+@media (min-width: 950px) {
+  .container-footer {
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto; }
+  .container-body {
+    width: 100%;
+    display: flex; }
+  .columna1 {
+    max-width: 475px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; }
+  .columna1 h2 {
+    font-size: 18px; }
+  .row-info {
+    margin-top: 9px;
+    display: flex; }
+  .row-info label {
+    margin-left: 5px; }
+  .row-info img {
+    height: 20px;
+    width: 20px; }
+  .columna2 {
+    max-width: 475px;
+    margin: auto;
+    display: flex;
+    flex-direction: column; }
+  .columna2 h2 {
+    font-size: 18px; }
+  .row-rs {
+    margin-top: 10px;
+    display: flex; }
+  .row-rs img {
+    height: 40px;
+    width: 40px;
+    color: var(--text-color-inverse); }
+  .row-rs label {
+    margin-top: 13px;
+    margin-left: 15px; } }
+
+/* FIN DEL FOOTER */
