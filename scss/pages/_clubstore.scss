@@ -1,0 +1,98 @@
+.store_card {
+    @include flexible(flex, row, center, center);
+    background-color: var(--primario);
+    max-width: 950;
+    padding: 20px;
+    padding-bottom: 40px;
+    margin: auto;
+    flex-wrap: wrap;
+
+    img {
+        width: 300px;
+        height: 322px;
+        border-radius: 8px 8px 0px 0px;
+
+    }
+}
+
+.card {
+    width: 300px;
+    position: relative;
+    margin: 20px;
+    border-radius: 8px;
+
+
+    &:hover {
+        box-shadow: 1px 1px 20px -10px #20202049;
+    }
+}
+
+.card:hover .info {
+    margin-top: -10px;
+    transition: all 400ms;
+    border-radius: 0px 0px 8px 8px;
+}
+
+.card:hover .imagen_store {
+    margin-top: -50px;
+    transition: all 400ms;
+    border-radius: 8px 8px 0px 0px;
+
+}
+
+.imagen_store {
+    width: 100%;
+    height: 322px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.info {
+    width: 100%;
+    height: 180px;
+    color: var(--text-color-inverse);
+    background-color: var(--secundario);
+    padding-bottom: 5px;
+    margin-top: -170px;
+
+
+    p {
+        font-size: 14px;
+        margin: 10px;
+        display: -webkit-box;
+        display: -moz-box;
+        display: box;
+        -webkit-box-orient: vertical;
+        -moz-box-orient: vertical;
+        box-orient: vertical;
+        -webkit-line-clamp: 5;
+        line-clamp: 8;
+        overflow: hidden;
+    }
+
+    input {
+        margin-top: 20px;
+        margin-left: 10px;
+        padding: 10px 40px;
+        background: var(--primario);
+        color: var(--text-color-inverse);
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 1.2;
+        cursor: pointer;
+        border: none;
+        border-radius: 8px;
+        box-shadow: 1px 1px 30px -5px #20202049;
+        transition: box-shadow 300ms;
+
+        &:hover {
+            box-shadow: 1px 1px 30px -5px #20202070;
+
+        }
+    }
+
+}
